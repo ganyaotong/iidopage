@@ -8,7 +8,14 @@ iidopage is library for generate page menu
 ```
 
 ``` javascript
-new pageMenu('menu').generate(5,1);
+function pageMenuClick() {
+	$('#menu li').click(function(even){
+		var c = $(this).text();
+		//other script
+	});
+}
+new pageMenu('menu').generate(5,1).callback(pageMenuClick)
+
 ```
 
 output:
