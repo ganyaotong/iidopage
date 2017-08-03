@@ -36,15 +36,12 @@ iidoMenu.prototype.generate = function(pageCount,current) {
 	html = startHtml+currentHtml+stopHtml;
 	
 	document.getElementById(this.pageMenuId).innerHTML = html;
-
-	//you need to customize here
-	$('#menu li').click(function(even){
-		var c = $(this).text();
-		getPage(c);
-		getMenu(c);
-	});
+	return this;
 };
 
+iidoMenu.prototype.callback = function(callback) {
+	callback();
+};
 
 function pageMenu(pageMenuId){
 	return new iidoMenu(pageMenuId);
